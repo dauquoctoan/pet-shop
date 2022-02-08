@@ -1,0 +1,25 @@
+<div class="body">
+     <div class="login-form">
+          <div class="login-center">
+               <div class="login-title">
+                    <div style="font-size: 30px;">Đăng nhập</div>
+               </div>
+               <form action="/admin/login" method="POST">
+                    <div class="login-form-input">
+                         <div  class="login-form-input-item">
+                              <label>{{error}}</label>
+                         </div>
+                         <div  class="login-form-input-item">
+                              <label>Tên tài khoản:</label>
+                              <input name="userName" type="text"/>
+                         </div>
+                         <div class="login-form-input-item">
+                              <label>Mật khẩu:</label>
+                              <input name="passWord" class="login-input-password" type="password"/>
+                         </div>
+                         <button class="login-button">Đăng nhập</button>
+                    </div>
+               </form>
+          </div>
+     </div>    
+</div>

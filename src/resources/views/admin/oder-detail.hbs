@@ -1,0 +1,82 @@
+<div class="content">
+     <div class="add-product-center add-product-center-order-detail">
+          <div class="content-add-product-detail">
+               <div class="content-add-product-title">
+                         Chi tiết đơn hàng
+               </div>
+               <div style="align-items: center;">
+                   <form action="/admin/order/{{Order._id}}" method="post">
+                         Trạng thái: 
+                         <select name="status">
+                               <option value="Đang chờ">
+                                   {{Order.status}}
+                              </option>
+                              <option value="Đang chờ">
+                                   Đang chờ
+                              </option>
+                              <option value="Đang giao">
+                                   Đang giao
+                              </option>
+                              <option value="Đã giao">
+                                   Đã giao
+                              </option>
+                              <option value="Đã hủy">
+                                   Đã hủy
+                              </option>
+                         </select>
+                         <button>Cập nhật</button>
+                   </form>
+               </div>
+               <form class="content-add-product-order" ref='uploadForm' id='uploadForm'  action="/admin/category/add" method="POST" enctype="multipart/form-data">
+                    
+                    <div class="content-add-product-item">
+                         <div class=" content-add-product-name">
+                              Tên người đặt
+                         </div>
+                         <div class="content-add-product-input">
+                              <label>{{Order.fullName}}</label>
+                         </div>
+                    </div>
+                    <div class="content-add-product-item">
+                         <div class=" content-add-product-name">
+                              Số điện thoại
+                         </div>
+                         <div class="content-add-product-input">
+                             <label> {{Order.phoneNum}}</label>
+                         </div>
+                    </div>
+                    <div class="content-add-product-item">
+                         <div class=" content-add-product-name">
+                             Địa chỉ
+                         </div>
+                         <div class="content-add-product-input">
+                             <label> {{Order.address}}</label>
+                         </div>
+                    </div>
+               </form>
+               <div style="text-align: center;">Các sản phẩm đã đặt</div>
+               <ul>
+                    {{#each Product}}
+                         <div class="order-product-item">
+                              <div class="order-product-item-child order-product-item-img" style="background-image: url({{this.image}});">
+
+                              </div>
+                              <div class="order-product-item-child order-product-item-name">
+                                   {{this.name}}
+                              </div>
+                              <div class="order-product-item-child order-product-item-quantity">
+                                   Số lượng: {{this.quantity}} Cái
+                              </div>
+                              <div class="order-product-item-child order-product-item-price">
+                                   Giá: {{#format this.totalPrice}} {{/format}}đ
+                              </div>
+                         </div>
+                    {{/each}}
+               </ul>
+               <div style="text-align: center; margin-bottom: 100px;">
+                    Tổng tiền: {{#format TotalPrice}}{{/format}} đ
+               </div>
+               
+               </div>
+     </div>
+</div>

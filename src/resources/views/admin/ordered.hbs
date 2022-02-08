@@ -1,0 +1,30 @@
+<div class="content">
+     <div class="content-center">
+          <div class="content-page-title">
+               Đơn hàng
+          </div>
+          <div style="display: flex;">
+               <div >
+                    <form class="content-search" action="/admin/order/search">
+                         <div class="input-search-center">
+                              <input name="search" class="input-search" type="text"/>
+                         </div>
+                         <button class="btn-search">Tìm kiếm</button>
+                    </form>
+               </div>
+          </div>
+          <div class="content-list">
+               {{#each Order}}
+               <div class="content-item">
+                    <a style="text-decoration: none; cursor: pointer;;" href="/admin/order/detail/{{this._id}}">
+                         <div style="background-color: {{#orderstatus this.status}}{{/orderstatus}};" class="content-item-name">
+                              <label style="margin-left: 20px; cursor: pointer; color: black">{{this.fullName}}</label>
+                              <div style="margin-right: 20px; color: black;">{{#formatdate this.createdAt}}{{/formatdate}}</div>
+                         </div>
+                        
+                    </a>
+               </div>
+               {{/each}}
+          </div>
+     </div>
+</div>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>{{title}}</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+          integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/app-admin.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+     <div class="containter">
+          <div class="sidebars-center">
+               <div class="sidebars">
+                    <div class="content-avata">
+                         <div class="content-avata-img" style="background-image: url({{User.image}}); background-repeat: no-repeat; background-position: center;">
+                              
+                         </div>
+                         <div class="btn-logout-div">
+                              <div style="margin-left: 10px;">{{User.fullName}}</div>
+                              <a href="/admin/logout"  class="btn-logout">Đăng xuất</a>
+                         </div>
+                    </div>
+                    <div style="display: {{#admin User.position}}{{/admin}};" class="sidebars-item sidebars-user">
+                         <a class="sidebars-item-link" href="/admin/staff"><i class="fas fa-users"></i>
+                         <label class="sidebars-label">TÀI KHOẢN</label></a>
+                    </div>
+                    <div class="sidebars-item sidebars-category">
+                         <a class="sidebars-item-link" href="/admin/category"><i class="fas fa-layer-group"></i>
+                         <label class="sidebars-label"></i>lOẠI SẢN PHẨM</label></a>
+                    </div>
+                    <div class="sidebars-item sidebars-product">
+                         <a class="sidebars-item-link" href="/admin"><i class="fal fa-drumstick-bite"></i>
+                         <label class="sidebars-label">SẢN PHẨM</label></a>
+                    </div>
+                    <div class="sidebars-item sidebars-banner">
+                         <a class="sidebars-item-link" href="/admin/banner"><i class="far fa-images"></i>
+                         <label class="sidebars-label">BANNERS</label></a>
+                    </div>
+                    <div class="sidebars-item sidebars-banner">
+                         <a class="sidebars-item-link" href="/admin/ordered"><i class="far fa-gifts"></i>
+                         <label class="sidebars-label">Đơn Hàng</label></a>
+                    </div>
+               </div>
+          </div>
+          {{{body}}}
+     </div>
+</body>
+</html>

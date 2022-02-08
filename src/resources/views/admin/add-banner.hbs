@@ -1,0 +1,67 @@
+<div class="content">
+     <div class="add-product-center">
+          <div class="content-add-product">
+               <form class="content-add-product" ref='uploadForm' id='uploadForm'  action="/admin/banner/add" method="POST" enctype="multipart/form-data">
+                    <div class="content-add-product-title">
+                         Thêm Banners
+                    </div>
+                    <div class="content-add-product-title">
+                         {{error}}
+                    </div>
+                    <div class="content-add-product-item">
+                         <div class=" content-add-product-name">
+                              Tên
+                         </div>
+                         <div class="content-add-product-input">
+                              <input placeholder="Tên sản phẩm" name="name" class="add-input-add" type="text"/>
+                         </div>
+                    </div>
+                    <div class="content-add-product-item">
+                         <div class=" content-add-product-name">
+                              Mô tả
+                         </div>
+                         <div class="content-add-product-input">
+                              <input placeholder="Mô tả" name="description"  type="text"/>
+                         </div>
+                    </div>
+                    <div class="content-add-product-item">
+                         <div class="content-add-product-name">
+                              Vị trí
+                         </div>
+                         <div class="content-add-product-input">
+                              <select name="position">
+                                   <option value="top">1-(Top)</option>
+                                   <option value="centerLeft">2-(Center Left)</option>
+                                   <option value="centerRight">3-(Center Right)</option>
+                                   <option value="bottomLeft">4-(Bottom Left)</option>
+                                   <option value="bottomRight">5-(Bottom Right)</option>
+                              </select>
+                         </div>
+                    </div>
+                    <div class="content-add-product-item">
+                         <div class="content-add-product-name">
+                              Loại sản phẩm
+                         </div>
+                         <div class="content-add-product-input">
+                              <select name="category">
+                                   {{#each Category}}
+                                        <option value="{{this._id}}">{{this.name}}</option>
+                                   {{/each}}
+                              </select>
+                         </div>
+                    </div>
+                    <div class="content-add-product-item">
+                         <div class=" content-add-product-name">
+                              Ảnh
+                         </div>
+                         <div class="content-add-product-input">
+                              <input  name="image" type="file"/>
+                         </div>
+                    </div>
+                    <div class="add-product-button">
+                         <button   value='Upload!' class="add-btn-add">Thêm</button>
+                    </div>
+               </form>
+          </div>
+     </div>
+</div>

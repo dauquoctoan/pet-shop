@@ -1,0 +1,41 @@
+<div class="body">
+     <div class="login-form">
+          <div class="login-center-regis">
+               <div class="login-title">
+                    <div style="font-size: 30px;">Đăng ký</div>
+               </div>
+               <form action="/admin/register" method="POST">
+                    <div class="login-form-input">
+                          <div  class="login-form-input-item">
+                              <label>{{error}}</label>
+                         </div>  
+                         <div  class="login-form-input-item">
+                              <label>Tên tài khoản:</label>
+                              <input name="userName" type="text"/>
+                         </div>
+                         <div class="login-form-input-item">
+                              <label>Mật khẩu:</label>
+                              <input name="passWord" class="login-input-password" type="password"/>
+                         </div>
+                         <div  class="login-form-input-item">
+                              <label>Họ tên:</label>
+                              <input name="fullName" class="login-input-fullname" type="text"/>
+                         </div>
+                         <div class="login-form-input-item">
+                              <label>Email:</label>
+                              <input name="email" class="login-input-email" type="email"/>
+                         </div>
+                         <div  class="login-form-input-item">
+                              <label>Địa chỉ:</label>
+                              <input name="address" class="login-input-address" type="text"/>
+                         </div>
+                         <div  class="login-form-input-item">
+                              <label>Số điện thoại:</label>
+                              <input name="phoneNum" class="login-input-phonenum" type="text"/>
+                         </div>
+                         <button class="login-button">Đăng nhập</button>
+                    </div>
+               </form>
+          </div>
+     </div>    
+</div>

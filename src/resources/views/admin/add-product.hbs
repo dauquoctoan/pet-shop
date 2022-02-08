@@ -1,0 +1,100 @@
+<div class="content">
+     <div class="add-product-center">
+          <div class="content-add-product">
+               <form class="content-add-product" ref='uploadForm' id='uploadForm'  action="/admin/product/add" method="POST" enctype="multipart/form-data">
+                    <div class="content-add-product-title">
+                         Thêm sản phẩm
+                    </div>
+                    <div class="content-add-product-title">
+                         {{error}}
+                    </div>
+                    <div class="content-add-product-item">
+                         <div class=" content-add-product-name">
+                              Tên sản phẩm
+                         </div>
+                         <div class="content-add-product-input">
+                              <input placeholder="Tên sản phẩm" name="name" class="add-input-add" type="text"/>
+                         </div>
+                    </div>
+                    <div class="content-add-product-item">
+                         <div class=" content-add-product-name">
+                              Mô tả
+                         </div>
+                         <div class="content-add-product-input">
+                              <input placeholder="mô tả" name="description"  type="text"/>
+                         </div>
+                    </div>
+                    <div class="content-add-product-item">
+                         <div class=" content-add-product-name">
+                              Giá
+                         </div>
+                         <div class="content-add-product-input">
+                              <input placeholder="Giá" name="price" type="number"/>
+                         </div>
+                    </div>
+                    <div class="content-add-product-item">
+                         <div class=" content-add-product-name">
+                              Giá cũ
+                         </div>
+                         <div class="content-add-product-input">
+                              <input placeholder="Giá cũ" name="priceold" type="number"/>
+                         </div>
+                    </div>
+                    <div class="content-add-product-item">
+                         <div class=" content-add-product-name">
+                              Màu sắc
+                         </div>
+                         <div class="content-add-product-input">
+                              <input placeholder="Màu sắc" name="color" type="text"/>
+                         </div>
+                    </div>
+
+                    <div class="content-add-product-item">
+                         <div class=" content-add-product-name">
+                              Số lượng
+                         </div>
+                         <div class="content-add-product-input">
+                              <input placeholder="Số lượng" name="quantity" type="number"/>
+                         </div>
+                    </div>
+                    <div class="content-add-product-item">
+                         <div class="content-add-product-name">
+                              Loại sản phẩm
+                         </div>
+                         <div class="content-add-product-input">
+                              <select name="category">
+                                   <option value="">--------</option>
+                                   {{#each Category}}
+                                   <option value="{{this._id}}">{{this.name}}</option>
+                                   {{/each}}
+                              </select>
+                         </div>
+                    </div>
+                    <div class="content-add-product-item">
+                         <div class="content-add-product-name">
+                              Trạng thái
+                         </div>
+                         <div class="content-add-product-input">
+                              <select name="status">
+                                   <option value="">--------</option>
+                                   <option value="Limited">Limited</option>
+                                   <option value="New">New</option>                                   
+                              </select>
+                         </div>
+                    </div>
+                    <div class="content-add-product-item">
+                         <div class=" content-add-product-name">
+                              Ảnh
+                         </div>
+                         <div class="content-add-product-input">
+                              <input name="image" type="file"/>
+                         </div>
+                    </div>
+                   
+                    <div class="add-product-button">
+                         <button  value='Upload!' class="add-btn-add">Thêm sản phẩm</button>
+                    </div>
+               </form>
+          </div>
+     </div>
+</div>

@@ -1,0 +1,36 @@
+<div class="content">
+     <div class="content-center">
+          <div class="content-page-title">
+              Loại sản phẩm
+          </div>
+          <div style="display: flex;">
+               <div>
+                   <form class="content-search"  action="/admin/category/search">
+                         <div class="input-search-center">
+                              <input name="search" class="input-search" type="text"/>
+                         </div>
+                         <button type="submit" class="btn-search">Tìm kiếm</button>
+                    </form>
+               </div>
+          </div>
+          <div class="content-add">
+               <a href="/admin/category/add"><button class="btn-add">Thêm</button></a>
+          </div>
+          <div class="content-list">
+               {{#each Category}}
+               <div class="content-item">
+                    <a style="text-decoration: none; cursor: pointer;" href="/admin/category/{{this._id}}">
+                         <div class="content-item-name">
+                              <label style="margin-left: 20px; cursor: pointer; color: black">{{this.name}}</label>
+                         </div>
+                    </a>
+                    <div class="content-item-delete">
+                         <form action="/admin/category/{{this._id}}?_method=DELETE" method="POST">
+                              <button style="border: none; text-decoration: none;" type="submit" ><i class="delete-icon fas fa-times"></i></button>
+                         </form>
+                    </div>
+               </div>
+               {{/each}}
+          </div>
+     </div>
+</div>

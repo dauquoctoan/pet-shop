@@ -1,0 +1,74 @@
+
+<div class="body">
+     <div class="contain-cart">
+          <div class="contain-cart-center">
+
+               <div class="cart-product-item">
+                    <div class="cart-product-item-title">
+                         Giỏ hàng của tôi
+                    </div>
+                    {{#each Product}}
+                    <div class="cart-product-item-child">
+                         <div class="cart-product-item-child-left">
+                              <div class="cart-product-item-image" style="background-image: url({{this.image}});">
+                              </div>
+                              <div class="cart-product-item-detail">
+                                   <div class="cart-product-item-detail-name">
+                                        {{this.name}}
+                                   </div>
+                                   <div class="cart-product-item-detail-price">
+                                        {{#format this.price}}{{/format}} đ
+                                   </div>
+                              </div>
+                         </div>
+                         <div class="cart-product-item-child-right">
+                              <form style="display: flex;" action="/cart/{{this._id}}?_method=PUT" method="post">
+                              <div class="cart-product-item-quantity">
+                                   <input  name="quantity" min="1" value="{{this.quantity}}" style="width: 60px;" type="number"/>
+                              </div>
+                              
+                              <div class="cart-product-item-price">
+                                   <button type="submit">Cập nhật</button>
+                              </div>
+                              </form>
+                              <div class="cart-product-item-price">
+                                   {{#format this.totalPrice}}{{/format}} đ
+                              </div>
+                              
+                              <div class="cart-product-item-delete">
+                                   <a href="/cart/{{this._id}}/delete"><button class="cart-product-item-delete-btn"><i class="fas fa-times"></i></button></a>
+                              </div>
+                         </div>
+                    </div>
+                    {{/each}}
+               </div>
+               <div class="cart-product-price">
+                    <div class="cart-product-price-title">
+                         Tổng đơn hàng
+                    </div>
+                    <div class="cart-product-price-subtotal">
+                         
+                         <div class="cart-wrap-price">
+                              <label class="cart-label">Tổng sản phẩm</label>
+                              <label class="cart-label">{{#format Price}}{{/format}} đ</label>
+                         </div>  
+                                                  
+                         <div class="cart-wrap-price">
+                              <label class="cart-label">Phí vận chuyển</label>
+
+                              <label class="cart-label">30,000 đ</label>
+                         </div>
+                    </div>
+                    <div class="cart-product-price-total">
+                         <label class="cart-label">Tổng cộng</label>
+                         <label class="cart-label"> {{#format TotalPrice}}{{/format}} đ</label>
+                    </div>
+                    <div class="cart-product-price-buttons">
+                         <form action="/checkout" method="GET">
+                              <button class="cart-product-price-button">Thanh Toán</button>
+                         </form>
+                    </div>
+               </div>
+          </div>
+     </div>
+</div>

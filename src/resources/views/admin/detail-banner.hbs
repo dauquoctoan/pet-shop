@@ -1,0 +1,53 @@
+<div class="content">
+     <div class="add-product-center add-product-center-order-detail">
+          <div class="content-add-product-detail">
+               <div class="content-add-product-title">
+                    {{Banner.name}}
+               </div>
+               <div class="content-add-product-title">
+                    {{error}}
+               </div>
+               <div style="align-items: center;">
+                   <form action="/admin/banner/{{Banner._id}}?_method=PUT" method="POST">
+                         Trạng thái: 
+                         <select name="active">
+                              <option value="{{Banner.active}}">{{Banner.active}}</option>
+                              <option value="Hiển thị">
+                                   Hiển thị
+                              </option>
+                              <option value="Ẩn">
+                                   Ẩn
+                              </option>
+                         </select>
+                         <input name="position" hidden type="text" value="{{Banner.position}}">
+                         <button>Cập nhật</button>
+                   </form>
+               </div>
+               <div class="content-add-product-order" ref='uploadForm' id='uploadForm'  action="/admin/category/add" method="POST" enctype="multipart/form-data">
+                    <div class="content-add-product-item">
+                         <div class=" content-add-product-name">
+                              Mô tả
+                         </div>
+                         <div class="content-add-product-input-detail content-add-product-input">
+                             <label> {{Banner.description}}</label>
+                         </div>
+                    </div>
+                    <div class="content-add-product-item">
+                         <div class=" content-add-product-name">
+                              Vị trí
+                         </div>
+                         <div class="content-add-product-input">
+                             <label> {{Banner.position}}</label>
+                         </div>
+                    </div>
+                    <div class="content-add-product-item">
+                         <div class="content-add-product-input">
+                              <div class="content-detail-image" style="background-image: url({{Banner.image}});">
+
+                              </div>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </div>
+</div>

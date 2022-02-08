@@ -1,0 +1,43 @@
+<div class="contain-product-title" style="margin-top: 100px;">
+     Sản phẩm theo danh mục sản phẩm
+</div>
+<div class="contain-product">
+     <div class="contain-product-center">
+          <div class="contain-product-row">
+               {{#each Product}}
+               <div class="product-item">
+                    {{#if this.status}}
+                       <div class="limited">{{this.status}}</div>
+                    {{/if}}
+                    <a class="product-item-link" href="/product/{{this._id}}">
+                         <div class="product-item-img" style="background-image: url({{this.image}});"></div>
+                         <div class="product-name">{{this.name}}</div>
+                         <div class="product-price">
+                              <label class="price-old">{{#format priceold}}{{/format}} đ</label>
+                              <label class="price-new">{{#format this.price}}{{/format}} đ</label>
+                         </div>
+                         <div class="quick-view">Quick View</div>
+                    </a>
+               </div>
+               {{/each}}
+               {{TotalPage}}
+               {{Page}}
+          </div>
+     </div>
+     <div class="body-paginator">
+          <div class="body-paginator-center">
+                 {{#loop totalPage  page CategoryId._id}}
+                    {{#if id}}
+                         <div class="body-paginator-item paginator-active">
+                              <a class="paginator-number paginator-active" href="/products/{{category}}?page={{index}}">{{index}}</a>
+                         </div>
+                         {{else}}
+                         <div class="body-paginator-item">
+                              <a class="paginator-number" href = "/products/{{category}}?page={{index}}">{{index}}</a>
+                         </div>
+                    {{/if}}
+               {{/loop}}  
+          </div>
+     </div>
+</div>
+

@@ -1,0 +1,91 @@
+
+<div class="body">
+    <div class="home-body-item-banner home-body-top" style="background-image: url({{BannerTop.image}});">
+        <div class="banner-item-contain">
+            <div class="banner-item-name">{{BannerTop.name}}</div>
+            <div class="banner-item-desc">{{BannerTop.description}}</div>
+            <a class="banner-item-link" href="/products/{{BannerTop.category}}">
+                Mua ngay
+            </a>
+        </div>
+    </div>
+    <div class="home-body-wrap">
+        <div class="home-body-item-banner home-body-item-banner-bc home-body-item-1-right" style="background-image: url({{BannerCenterRight.image}});">
+            <div class="banner-item-contain">
+                <div class="banner-item-name">{{BannerCenterRight.name}}</div>
+                <div class="banner-item-desc">{{BannerCenterRight.description}}</div>
+                <a class="banner-item-link" href="/products/{{BannerCenterRight.category}}">
+                Mua ngay
+            </a>
+            </div>
+        </div>
+        <div class="home-body-item-banner home-body-item-1-left" style="background-image: url({{BannerCenterLeft.image}});">
+            <div class="banner-item-contain">
+                <div class="banner-item-name">{{BannerCenterLeft.name}}</div>
+                <div class="banner-item-desc">{{BannerCenterLeft.description}}</div>
+                <a class="banner-item-link" href="/products/{{BannerCenterLeft.category}}">
+                 Mua ngay
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="home-body-wrap">
+        <div class="home-body-item-banner home-body-item-1-right" style="background-image: url({{BannerCenterRight.image}});">
+            <div class="banner-item-contain">
+                <div class="banner-item-name">{{BannerCenterRight.name}}</div>
+                <div class="banner-item-desc">{{BannerCenterRight.description}}</div>
+                <a class="banner-item-link" href="/products/{{BannerCenterRight.category}}">
+                    Mua ngay
+                </a>
+            </div>
+        </div>
+        <div class="home-body-item-banner home-body-item-1-left" style="background-image: url({{BannerBottomLeft.image}});">
+            <div class="banner-item-contain">
+                <div class="banner-item-name">{{BannerBottomLeft.name}}</div>
+                <div class="banner-item-desc">{{BannerBottomLeft.description}}</div>
+                <a class="banner-item-link" href="/products/{{BannerBottomLeft.category}}">
+                    Mua ngay
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="contain-product-title">
+        2022 PICKS
+    </div>
+    <div class="contain-product">
+        <div class="contain-product-center">
+            <div class="contain-product-row">
+                {{#each Product}}
+                    <div class="product-item">
+                        {{#if this.status}}
+                            <div class="limited">{{this.status}}</div>
+                        {{/if}}
+                        <a class="product-item-link" href="/product/{{this._id}}">
+                            <div class="product-item-img" style="background-image: url({{this.image}});">
+
+                            </div>
+                            <div class="product-name">{{this.name}}</div>
+                            <div class="product-price">
+                                <label class="price-old">{{#format priceold}} {{/format}} đ</label>
+                                <label class="price-new">{{#format this.price}}{{/format}} đ</label>
+                            </div>
+                            <div class="quick-view">Quick View</div>
+                        </a>
+                    </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="wraper-totop">
+    <div id="totop" class="backtotop">
+        <i class="icontotop fas fa-caret-up"></i>
+    </div>
+</div>
+<script type="text/javascript">
+    document.getElementById('totop').addEventListener("click", function(){
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    });
+</script>

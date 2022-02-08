@@ -1,0 +1,35 @@
+<div class="body">
+          <div class="product-detail">
+               <div class="product-detail-center">
+                    <div class="product-detail-lef">
+                         <div class="product-detail-lef-img" style="background-image: url({{Product.image}});">
+                         
+                         </div>
+                         <div class="product-detail-lef-used">
+                              {{Product.description}}
+                              
+                         </div>
+                    </div>
+                    <div class="product-detail-right">
+                         <form action="/cart/{{Product._id}}" method="POST">
+                              <div class="product-detail-right-item product-detail-right-name">{{Product.name}}</div>
+                              <div class="product-detail-right-item product-detail-right-price">
+                                   <label>Giá:</label>
+                                   {{Product.price}} đ
+                              </div>
+                              <div class="product-detail-right-item product-detail-right-type">Màu sắc: {{Product.color}}
+                                   
+                              </div>
+                              <div class="product-detail-right-item product-detail-right-quantity">
+                                   <label>Quantity:</label>
+                                   <input name="quantity" class="product-detail-right-quantity-input" type="number" min="0" value="1"/>
+                              </div>
+                              <div class="product-detail-right-item product-detail-right-status">Tình trạng: Còn hàng</div>
+                              <div class="product-detail-right-item product-detail-right-add">
+                                   <button class="product-detail-right-add-button">Thêm vào giỏ hàng</button>
+                              </div>
+                         </form>
+                    </div>
+               </div>
+          </div>
+</div>

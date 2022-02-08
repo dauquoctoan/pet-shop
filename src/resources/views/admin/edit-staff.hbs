@@ -1,0 +1,82 @@
+<div class="content">
+     <div class="add-product-center">
+          <div class="content-add-product">
+               <div style="text-align: center;">{{error}}</div>
+               <form class="content-add-product" ref='uploadForm' id='uploadForm'  action="/admin/staff/{{User._id}}/edit?_method=PUT" method="POST" enctype="multipart/form-data">
+                    <div class="content-add-product-title">
+                         Sửa
+                    </div>
+                    <div class="content-add-product-item">
+                         <div class="content-add-product-name">
+                              Tên tài khoản
+                         </div>
+                         <div class="content-add-product-input">
+                              <input name="userName" value="{{User.userName}}" class="add-input-add" type="text"/>
+                         </div>
+                    </div>
+                    <div class="content-add-product-item">
+                         <div class=" content-add-product-name">
+                             Mật khẩu
+                         </div>
+                         <div class="content-add-product-input">
+                              <input value="{{User.passWord}}" name="passWord"  type="password"/>
+                         </div>
+                    </div>
+                    <div class="content-add-product-item">
+                         <div class=" content-add-product-name">
+                              Họ tên
+                         </div>
+                         <div class="content-add-product-input">
+                              <input value="{{User.fullName}}" name="fullName" type="text"/>
+                         </div>
+                    </div>
+                    <div class="content-add-product-item">
+                         <div class=" content-add-product-name">
+                              Email
+                         </div>
+                         <div class="content-add-product-input">
+                              <input value="{{User.email}}" name="email" type="email"/>
+                         </div>
+                    </div>
+                    <div class="content-add-product-item">
+                         <div class=" content-add-product-name">
+                              Số điện thoại
+                         </div>
+                         <div class="content-add-product-input">
+                              <input value="{{User.phoneNum}}" name="phoneNum" type="text"/>
+                         </div>
+                    </div>
+                    <div class="content-add-product-item">
+                         <div class=" content-add-product-name">
+                              Địa chỉ
+                         </div>
+                         <div class="content-add-product-input">
+                              <input value="{{User.address}}" name="address" type="text"/>
+                         </div>
+                    </div>
+                    <div class="content-add-product-item">
+                         <div class="content-add-product-name">
+                              Vị trí
+                         </div>
+                         <div class="content-add-product-input">
+                              <select name="position">
+                                   <option value="STAFF">STAFF</option>
+                                   <option value="ADMIN">ADMIN</option>                                   
+                              </select>
+                         </div>
+                    </div>
+                    <div class="content-add-product-item">
+                         <div class=" content-add-product-name">
+                              Ảnh
+                         </div>
+                         <div class="content-add-product-input">
+                              <input name="image" type="file"/>
+                         </div>
+                    </div>
+                    <div class="add-product-button">
+                         <button  value='Upload!' class="add-btn-add">Sửa</button>
+                    </div>
+               </form>
+          </div>
+     </div>
+</div>

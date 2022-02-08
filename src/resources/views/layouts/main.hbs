@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+          integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <div class="header-item">
+            <div class="header-item-logo">
+                <a href="/" style="color: black;"><i class="fas fa-paw"></i></a>
+            </div>
+        </div>
+        <div class="header-item">
+            <div class="header-item-child">
+                <label class="header-item-child-home"><a href="/" style="text-decoration: none; color: black;">Trang chủ</a></label>
+            </div>
+            <div class="header-item-child header-item-child-shop">
+                <div class="container-down">
+                    <label class="header-item-child-home" style="cursor: pointer;">Loại sản phẩm</label>
+                <div class="header-item-child-search-list">
+                    <ul class="header-item-child-search-lists">
+                        {{#each Category}}
+                            <li class="header-item-child-search-item"><a class="header-item-child-search-item-link" href="/products/{{this._id}}">{{this.name}}</a></li>
+                        {{/each}}
+                    </ul>
+               </div>
+                </div>
+            </div>
+            <div class="header-item-child">
+                <form action="/search">
+                    <button class="header-item-search-button" type="submit"><i class="fal fa-search"></i></button>
+                    <input class="header-item-search" name="search" placeholder="Tìm kiếm..." type="text"/>
+                </form>
+            </div>
+            <div class="header-item-child">
+                <a class="header_item-cart" href="/cart"><i class="fab fa-opencart"></i></a>
+            </div>
+        </div>
+    </div>
+    {{{body}}}
+   <div class="bottom">
+        <div class="wrap-bottom">
+            <div class="bottom-icon"><i class="fab fa-facebook-f"></i></div>
+            <div class="bottom-icon"><i class="fab fa-twitter"></i></div>
+            <div class="bottom-icon"><i class="fab fa-youtube"></i></div>
+            <div class="bottom-icon"><i class="fab fa-instagram"></i></div>
+        </div>
+        <div class="wrap-bottom">
+            © 2021 by Shop-pet Official Website. All rights reserved.
+        </div>
+    </div> 
+</body>
+</html>
